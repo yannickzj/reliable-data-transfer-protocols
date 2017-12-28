@@ -1,4 +1,11 @@
-# Assignment 2
+# Reliable Data Transfer Protocols
+
+## Introduction
+
+This is a course assignment to implement both the *Go-Back-N* and *Selective Repeat* versions of pipelined reliable data transfer, as well as a simple file transfer application that can transfer any file (including binary files) over the unreliable channel emulator. The reliable transfer protocols are able to handle network errors such as packet loss, duplication, and reordering.
+
+## Assignment requirements
+Please review the *requirements.pdf* for details.
 
 ## How to run the program
 
@@ -27,14 +34,9 @@ Before you run the Sender, please remember to run the channel emulator first.
 
 ## Build and test environment
 
-+ Build: 
++ Build and Test: 
 ```
-ubuntu1604-006.student.cs.uwaterloo.ca
-```
-+ Test: 
-
-```
-ubuntu1604-006.student.cs.uwaterloo.ca
+ubuntu 16.04
 ```
 
 ## Design ideas
@@ -54,4 +56,4 @@ The Selective Repeat version of pipelined reliable data transfer also follows th
 
 + *make* version: *GNU Make 4.1*
 
-+ *Java* version: *openjdk "9-internal"*
++ *Java* version: *openjdk-9*
