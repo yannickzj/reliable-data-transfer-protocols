@@ -41,7 +41,7 @@ ubuntu 16.04
 
 ## Design ideas
 
-All parts of the assignment have been completed. Both protocols use the common class, called *Packet*, for the transmission packet. This class follows the packet format described in the assignment, which can easily convert to the *Bytes* format and vice versa. Here are some more design ideas for the two protocols.
+Both protocols use the common class, called *Packet*, for the transmission packet. This class follows the packet format described in the assignment, which can easily convert to the *Bytes* format and vice versa. Here are some more design ideas for the two protocols.
 
 + Go-Back-N protocol
 
