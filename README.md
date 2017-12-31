@@ -13,7 +13,7 @@ When the sender needs to send packets to the receiver, it sends them to the chan
 
 ### Packet format
 
-All packets exchanged between the sender and the receiver must adhere to the following format:
+All packets exchanged between the sender and the receiver adheres to the following format:
 
 | Field           | Explanation                                         |
 | :-------------: |:---------------------------------------------------:|
