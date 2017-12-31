@@ -5,7 +5,36 @@
 This is a course assignment to implement both the *Go-Back-N* and *Selective Repeat* versions of pipelined reliable data transfer, as well as a simple file transfer application that can transfer any file (including binary files) over the unreliable channel emulator. The reliable transfer protocols are able to handle network errors such as packet loss, duplication, and reordering.
 
 ## Assignment requirements
-Please review the *requirements.pdf* for details.
+The overall setup is shown in the diagram below with 'S', 'B', 'C', and 'R' denoting the various UDP sockets.
+
+<p align="center"><img src="/README/overview.png" width="500"></p>
+
+When the sender needs to send packets to the receiver, it sends them to the channel emulator at 'B'. The channel emulator forwards the packets to the receiver at 'R'. However, it may randomly delay or discard packets. The receiver sends ACKs back to the channel at 'C', which may also randomly discard or delay ACKs before forwarding them to 'S'.
+
+### Packet format
+
+### Sender program
+
+### Receiver program
+
+## Addressing
+
+In order to keep addressing simple, but enable running the programs in a shared environment, the following addressing scheme is used with OS-assigned port numbers. 
+
++ The receiver program is started first and must write its 'R' socket address information (hostname and port number) into a file *recvInfo* that is read by the channel emulator. 
+
++ The channel emulator is started next and uses this information to send packets towards the receiver. 
+
++ The same mechanism is used between the sender and the emulator, i.e., the emulator writes its 'B' addressing information into a file *channelInfo* which is then read by the sender. 
+
+All files are read and written in the current directory. The contents of each file are the IP address (or hostname) and port number, separated by space.
+
+## Channel emulator
+
+The channel emulator is started with the following syntax:
+```
+java -jar Emulator/channel.jar <max delay> <discard probability> <random seed> <verbose>
+```
 
 ## How to run the program
 
